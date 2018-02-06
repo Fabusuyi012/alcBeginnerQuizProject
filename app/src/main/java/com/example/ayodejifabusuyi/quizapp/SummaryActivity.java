@@ -1,10 +1,14 @@
 package com.example.ayodejifabusuyi.quizapp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 public class SummaryActivity extends AppCompatActivity {
+
+    private int totalQuestions, correctAnswers, score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +23,6 @@ public class SummaryActivity extends AppCompatActivity {
         displaySummary();
     }
 
-    private int totalQuestions, correctAnswers, score;
-
     public void displaySummary(){
         int percentageCorrect = (correctAnswers/totalQuestions)*100;
         String summaryString = "You got approximately "+percentageCorrect+"% percent of the questions correctly" +
@@ -28,5 +30,10 @@ public class SummaryActivity extends AppCompatActivity {
                 "\nYour final score is "+score;
         TextView summaryText = findViewById(R.id.summaryText);
         summaryText.setText(summaryString);
+    }
+
+    public void restartButtonClicked(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

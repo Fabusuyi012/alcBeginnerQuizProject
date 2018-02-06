@@ -36,7 +36,7 @@
             android:gravity="center"
             android:text="You had a final score of 100%"
             android:textColor="@android:color/white"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
 
     </LinearLayout>
@@ -56,6 +56,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/restartButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -63,6 +64,7 @@
                 android:background="@drawable/restart_button"
                 android:drawableLeft="@drawable/rematch"
                 android:drawableTint="@android:color/white"
+                android:onClick="restartButtonClicked"
                 android:paddingHorizontal="60dp"
                 android:text="Restart"
                 android:textAllCaps="false"
